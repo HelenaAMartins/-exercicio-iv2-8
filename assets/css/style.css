@@ -24,11 +24,12 @@ header{
 
 main{
   min-height: 80vh;
+  max-width: 100%;
 }
 
 .wrapper{
   background-color: #6f18218f;
-  /* background-color: #4a939691; */
+  max-width: 100%;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -39,10 +40,11 @@ main{
 input{
   border: none; 
   outline: none;
-  width: 420px;
+  max-width: 420px;
   color: #000;
   font-size: 18px;
   padding: 13px;
+  width: 100%;
   
 }
 
@@ -69,24 +71,43 @@ button{
 
 .drinksInfoList{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 15px;
+}
+
+@media  screen and (min-width: 644px) {
+  .drinksInfoList{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .drinksDetails{
   display: grid;
-  grid-template-columns: 120px auto;
+  grid-gap: 10px;
   background-color: #fff;
   
+}
+
+@media  screen and (min-width: 644px) {
+  .drinksDetails{
+    grid-template-columns: 120px auto;
+  }
 }
 
 .smallThumb{
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 120px;
+  width: 100%;
   margin: 0;
-  height:120px;
   position: relative;
+  height: 180px;
+}
+
+@media  screen and (min-width: 644px) {
+  .smallThumb{
+      height:120px;
+
+    }
   }
 
   .smallThumb img{
@@ -124,7 +145,6 @@ button{
 
 /* Drink details modal */
 .drinksInfoCard{
-  display: grid;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -132,6 +152,12 @@ button{
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
+}
+
+@media  screen and (min-width: 644px) {
+  .drinksInfoCard{
+    display: grid;
+  }
 }
 
 .infos{
@@ -165,9 +191,17 @@ button{
 }
 
 .drinkCard.grid{
-  display: grid;
-  grid-template-columns: 200px auto;
+  display: flex;
+  flex-direction: column;
   grid-gap: 20px;
+}
+
+@media  screen and (min-width: 644px) {
+  .drinkCard.grid{
+    grid-template-columns: 200px auto;
+    display: grid;
+  }
+  
 }
 
 .ingredientsList{
@@ -204,7 +238,7 @@ padding: 5px;
 .thumb{
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 200px;
+  width: 100%;
   margin: 0;
   height:200px;
   position: relative;
