@@ -18,9 +18,9 @@ const templateDrink = (drink) => {
     </figure>
     <div class="drinksDetailsHead">
       <small>ID: ${idDrink}</small>
-      <h3>Drink: ${strDrink}</h3>
-      <p>${strAlcoholic}</p>
-      <p>${strGlass}</p>
+      <h3>${strDrink}</h3>
+      <p>Type: ${strAlcoholic}</p>
+      <p>Glass: ${strGlass}</p>
     </div>
     </div>
       `
@@ -31,7 +31,7 @@ const templateDrinkData = (drink) => {
   let ingredients = [];
   let measures = [];
 
-  let templateIngredients = '<div class="drinkCard"><h3>Ingredients</h3><div class="grid">';
+  let templateIngredients = '<div class="drinkCard"><h3>Ingredients</h3><div class="ingredientsList">';
 
   for(let i = 1; i < 15; i++){
     let textIngredient = `strIngredient${i}`
@@ -40,10 +40,10 @@ const templateDrinkData = (drink) => {
     let measure = drink[textMeasure]
 
     if(ingredient != null && measure != null){
-      templateIngredients += `
+      templateIngredients += `<div class="ingredientsGrid">
       <div>${ingredient}</div>
       <div>${measure}</div>
-      
+      </div>
       `
     }
   }
@@ -57,10 +57,10 @@ const templateDrinkData = (drink) => {
               <img src="${strDrinkThumb}">
             </div>
             <div class="infos">
-              <span class="id">${idDrink}</span>
+              <small>${idDrink}</small>
               <h2>${strDrink}</h2>
               <p>Type: ${strAlcoholic}</p>
-              <p>Category: ${strCategory}</p>
+              <p class="category">Category: ${strCategory}</p>
               <p>Glass type: ${strGlass}</p>
             </div> 
           </div>
