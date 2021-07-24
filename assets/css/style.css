@@ -8,7 +8,7 @@
 
 body{
   /* background-image: url('https://images.unsplash.com/photo-1554314591-31236f6872d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); */
-  background-image: url('https://images.unsplash.com/photo-1529604278261-8bfcdb00a7b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80');
+  background-image: url("../img/bar.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -21,6 +21,10 @@ header{
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
+}
+
+main{
+  min-height: 80vh;
 }
 
 .wrapper{
