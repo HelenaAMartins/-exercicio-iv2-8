@@ -10,7 +10,7 @@ const fetchData = (endpoint) => {
 }
 
 const templateDrink = (drink) => { 
-  console.log(drink)
+  
   const {strDrinkThumb, strDrink, idDrink, strAlcoholic, strGlass} = drink;
     return `<div class="drinksDetails" onclick="showData(${idDrink})">
     <figure class="smallThumb">

@@ -1,28 +1,36 @@
 const templateDrinkData = (drink) => {
-  const {strDrink, idDrink, strAlcoholic, strCategory, strDrinkThumb, strGlass, strInstructions} = drink;
+  const {
+    strDrink,
+    idDrink,
+    strAlcoholic,
+    strCategory,
+    strDrinkThumb,
+    strGlass,
+    strInstructions,
+  } = drink;
   let ingredients = [];
   let measures = [];
 
-  let templateIngredients = '<div class="drinkCard"><h3>Ingredients</h3><div class="ingredientsList">';
+  let templateIngredients =
+    '<div class="drinkCard"><h3>Ingredients</h3><div class="ingredientsList">';
 
-  for(let i = 1; i < 15; i++){
-    let textIngredient = `strIngredient${i}`
-    let ingredient = drink[textIngredient]
-    let textMeasure = `strMeasure${i}`
-    let measure = drink[textMeasure]
+  for (let i = 1; i < 15; i++) {
+    let textIngredient = `strIngredient${i}`;
+    let ingredient = drink[textIngredient];
+    let textMeasure = `strMeasure${i}`;
+    let measure = drink[textMeasure];
 
-    if(ingredient != null && measure != null){
+    if (ingredient !== null && ingredient !== "" && measure !== null && measure !== "") {
       templateIngredients += `<div class="ingredientsGrid">
       <div>${ingredient}</div>
       <div>${measure}</div>
       </div>
-      `
+      `;
     }
   }
 
-  templateIngredients += '</div></div>'
+  templateIngredients += "</div></div>";
 
-  
   return `<div class="drinkCard grid">
             <div class="thumb">
               <img src="${strDrinkThumb}">
@@ -39,23 +47,19 @@ const templateDrinkData = (drink) => {
           <div class="drinkCard">
             <h3>How to make</h3>
             <p>${strInstructions}</p>
-          </div>`
-}
+          </div>`;
+};
 
-const showData = async(id) => {
-  const response = await fetchData(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-  const drinkData = response.drinks[0]
-  
-  
-  let template = '<div class="drinksInfoCard">'
-console.log(drinkData)
-  
-  template += templateDrinkData(drinkData)
- 
-  
+const showData = async (id) => {
+  const response = await fetchData(
+    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+  );
+  const drinkData = response.drinks[0];
 
+  let template = '<div class="drinksInfoCard">';
   
+  template += templateDrinkData(drinkData);
   template += "</div>";
-  populateMain('.modalTarget', template)
+  populateMain(".modalTarget", template);
   modal.style.display = "block";
-}
+};
