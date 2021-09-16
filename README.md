@@ -1,7 +1,7 @@
 # DRINKS RECIPES
 
 ## Website Preview
-![Github Pages](https://helenaamartins.github.io/-exercicio-iv2-8/)
+![![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://helenaamartins.github.io/-exercicio-iv2-8/)
 
 ## Tecnologies
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
